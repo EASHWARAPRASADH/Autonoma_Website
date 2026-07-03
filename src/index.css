@@ -95,7 +95,8 @@
 :root.light .bg-slate-900\/40,
 :root.light .bg-slate-900\/50,
 :root.light .bg-slate-950\/40,
-:root.light .bg-slate-950\/50 {
+:root.light .bg-slate-950\/50,
+:root.light .bg-slate-950\/60 {
   background-color: rgba(255, 255, 255, 0.8) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
