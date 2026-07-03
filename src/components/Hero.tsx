@@ -374,7 +374,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
                 <div className="animate-marquee-right gap-4">
                   {/* First batch */}
                   {[
-                    "OMNI-VISUAL AI", "OCR MATERIAL LOOKUP", "MACHINE TELEMETRY", 
+                    "OMNI-VISUAL AI", "EMAIL & INVOICE OCR", "MACHINE TELEMETRY", 
                     "8D COMPLIANCE", "RFID HRMS ACCESS", "LIVE FACTORY TELEMETRY",
                     "PREDICTIVE MAINTENANCE", "EDGE INTELLIGENCE", "REAL-TIME ERP LOOP"
                   ].map((tech, idx) => (
@@ -388,7 +388,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
                   ))}
                   {/* Duplicate batch for seamless loop */}
                   {[
-                    "OMNI-VISUAL AI", "OCR MATERIAL LOOKUP", "MACHINE TELEMETRY", 
+                    "OMNI-VISUAL AI", "EMAIL & INVOICE OCR", "MACHINE TELEMETRY", 
                     "8D COMPLIANCE", "RFID HRMS ACCESS", "LIVE FACTORY TELEMETRY",
                     "PREDICTIVE MAINTENANCE", "EDGE INTELLIGENCE", "REAL-TIME ERP LOOP"
                   ].map((tech, idx) => (

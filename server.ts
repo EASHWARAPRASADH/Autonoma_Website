@@ -169,8 +169,8 @@ function getMockAnalysis(factoryName: string, industry: string, challenge: strin
     summary = `Autonomous visual material scanning is recommended for ${factoryName}. Since manual part coding is slow and prone to errors, installing mobile and static AI camera lookup stations will eliminate 'unknown parts' immediately, cutting down-time dramatically.`;
     recs = [
       {
-        title: "Omni-Visual AI Material Lookup & OCR",
-        description: "Equip store operators with visual inventory camera apps. Taking a picture of any unlabelled mechanical or electrical component instantly searches the catalog, reveals bin location, and logs stock levels.",
+        title: "Omni-Visual AI & Invoice/Email OCR",
+        description: "Equip store operators with visual inventory camera apps and automated document ingestors. Taking a picture of any unlabelled mechanical or electrical component instantly searches the catalog, while invoice OCR parses vendor emails.",
         features: ["Photo-to-Part Visual AI Search", "99.8% Accuracy Invoice OCR Scanner", "Global Parametric M365-Style Search"]
       },
       {
