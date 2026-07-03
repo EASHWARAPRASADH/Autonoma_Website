@@ -11,15 +11,13 @@ export default function Navigation({ onScrollTo }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light" | null>(null);
 
-  // Initialize theme from localStorage or document class
+  // Initialize theme from localStorage or default to light
   useEffect(() => {
-    const root = document.documentElement;
     const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
     if (savedTheme) {
       setTheme(savedTheme);
     } else {
-      const hasLightClass = root.classList.contains("light");
-      setTheme(hasLightClass ? "light" : "dark");
+      setTheme("light");
     }
   }, []);
 
