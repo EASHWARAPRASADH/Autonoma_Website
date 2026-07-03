@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom continuous loading bar animation */
+@keyframes infinite-loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+.animate-infinite-loading {
+  animation: infinite-loading 1.8s infinite linear;
+}
+
+/* Slow spin */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s infinite linear;
+}
+
+/* Bounce slow vertical */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(218px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4.5s infinite ease-in-out;
+}
+
+/* Scrollbar styling */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(249, 115, 22, 0.3);
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(249, 115, 22, 0.5);
+}
+
+/* ==========================================================================
+   LIGHT THEME STYLING OVERRIDES (NUTECH AUTONOMA BRANDING)
+   ========================================================================== */
+:root.light {
+  color-scheme: light;
+}
+
+:root.light body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Sections and main container backgrounds */
+:root.light .bg-\[\#0A0C10\] {
+  background-color: #f8fafc !important;
+}
+
+:root.light .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+:root.light .bg-slate-950 {
+  background-color: #f1f5f9 !important;
+}
+
+:root.light .bg-slate-900\/30,
+:root.light .bg-slate-900\/40,
+:root.light .bg-slate-900\/50,
+:root.light .bg-slate-950\/40,
+:root.light .bg-slate-950\/50 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+:root.light .bg-\[\#0F1219\]\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Border overrides */
+:root.light .border-slate-800,
+:root.light .border-slate-800\/80,
+:root.light .border-slate-850,
+:root.light .border-slate-900,
+:root.light .border-slate-900\/60,
+:root.light .divide-slate-800 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+/* Scrollbar adaptation */
+:root.light .scrollbar-thin::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+:root.light .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.2);
+}
+:root.light .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.4);
+}
+
+/* Text overrides */
+:root.light .text-white {
+  color: #0f172a !important;
+}
+
+/* Keep blue/emerald/cyan/orange text readable in light mode */
+:root.light .text-blue-400 {
+  color: #2563eb !important; /* blue-600 */
+}
+:root.light .text-cyan-400 {
+  color: #0891b2 !important; /* cyan-600 */
+}
+:root.light .text-teal-400 {
+  color: #0d9488 !important; /* teal-600 */
+}
+:root.light .text-emerald-400 {
+  color: #16a34a !important; /* emerald-600 */
+}
+:root.light .text-orange-500 {
+  color: #ea580c !important; /* orange-600 */
+}
+:root.light .text-amber-500 {
+  color: #d97706 !important; /* amber-600 */
+}
+
+/* Button & Badge White Text Preservation */
+:root.light .bg-blue-600 .text-white,
+:root.light .bg-blue-600.text-white,
+:root.light .bg-blue-600 *,
+:root.light .bg-blue-600,
+:root.light button.bg-blue-600,
+:root.light .bg-gradient-to-r .text-white,
+:root.light .bg-gradient-to-tr .text-white,
+:root.light .bg-gradient-to-r.from-blue-600 .text-white,
+:root.light .bg-gradient-to-tr.from-blue-600 .text-white {
+  color: #ffffff !important;
+}
+
+/* Standard Slate texts */
+:root.light .text-slate-100 {
+  color: #0f172a !important;
+}
+:root.light .text-slate-200 {
+  color: #1e293b !important;
+}
+:root.light .text-slate-300 {
+  color: #334155 !important;
+}
+:root.light .text-slate-400 {
+  color: #475569 !important;
+}
+:root.light .text-slate-500 {
+  color: #64748b !important;
+}
+:root.light .text-slate-600 {
+  color: #475569 !important;
+}
+
+/* Specific elements background */
+:root.light .bg-slate-900\/85 {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+:root.light .bg-slate-950\/50 {
+  background-color: #f1f5f9 !important;
+}
+
+:root.light .bg-slate-900\/60 {
+  background-color: rgba(241, 245, 249, 0.6) !important;
+}
+
+:root.light .bg-blue-950 {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Gradient overrides on Title */
+:root.light .from-white {
+  --tw-gradient-from: #0f172a !important;
+}
+:root.light .via-slate-100 {
+  --tw-gradient-via: #1e293b !important;
+}
+:root.light .to-slate-400 {
+  --tw-gradient-to: #475569 !important;
+}
+
+/* Preserve scanning glow or simulation colors */
+:root.light .bg-blue-500\/10 {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+}
+:root.light .bg-blue-500\/15 {
+  background-color: rgba(37, 99, 235, 0.12) !important;
+}
+:root.light .bg-blue-950\/10 {
+  background-color: rgba(37, 99, 235, 0.05) !important;
+}
+:root.light .bg-blue-950\/25 {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Grid overlay background inside hero section */
+:root.light .bg-\[linear-gradient\(to_right\2c \#0e1322_1px\2c transparent_1px\)\2c linear-gradient\(to_bottom\2c \#0e1322_1px\2c transparent_1px\)\],
+:root.light .bg-\[linear-gradient\(to_right\2c \#0e1322_1px\2c transparent_1px\)\,linear-gradient\(to_bottom\2c \#0e1322_1px\2c transparent_1px\)] {
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px) !important;
+}
+
+/* Forms & inputs inside Lead Capture */
+:root.light input.bg-slate-950,
+:root.light select.bg-slate-950,
+:root.light textarea.bg-slate-950 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+:root.light .placeholder-slate-650 {
+  color: #94a3b8 !important;
+}
+:root.light input::placeholder,
+:root.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Hover state inside Control module buttons */
+:root.light .bg-slate-900\/40 {
+  background-color: #f1f5f9 !important;
+}
+:root.light .border-slate-850 {
+  border-color: #e2e8f0 !important;
+}
+:root.light .bg-slate-950.border-slate-850 {
+  background-color: #f8fafc !important;
+}
+
+/* Nav scrolling shadow and background */
+:root.light nav.bg-\[\#0A0C10\]\/90 {
+  background-color: rgba(248, 250, 252, 0.9) !important;
+  border-color: #e2e8f0 !important;
+}
+:root.light nav {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+  border-color: #e2e8f0 !important;
+}
+:root.light nav.bg-transparent {
+  background-color: transparent !important;
+}
+
+/* Quote decorations */
+:root.light .text-slate-800\/20 {
+  color: rgba(203, 213, 225, 0.25) !important;
+}
+
+/* Ensure selected control button styles read perfectly in light mode */
+:root.light .bg-gradient-to-r.from-blue-600\/20.to-cyan-500\/10 {
+  background-image: linear-gradient(to right, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.05)) !important;
+  border-color: rgba(37, 99, 235, 0.4) !important;
+  color: #1d4ed8 !important;
+}
+:root.light .bg-gradient-to-r.from-blue-600\/20.to-cyan-500\/10 * {
+  color: #1d4ed8 !important;
+}
+
+/* Ensure correct background details for visual lookup */
+:root.light .bg-slate-950.border-blue-500 {
+  background-color: #ffffff !important;
+}
+
+/* Pulse highlight indicators */
+:root.light .ring-blue-500\/20 {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Dropdowns & Selects styling */
+:root.light option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* ==========================================================================
+   LIGHT MODE OVERRIDES FOR CAROUSEL & SELECTION BUTTONS
+   ========================================================================== */
+
+/* Dimension Selector Button Light Mode Overrides (removes black bg) */
+:root.light .features-dim-btn {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  opacity: 0.8 !important;
+}
+
+:root.light .features-dim-btn-01,
+:root.light #features-dim-01 {
+  background-color: #ffffff !important;
+}
+
+/* Selected Dimension button */
+:root.light .features-dim-btn[data-active="true"] {
+  background-color: #f1f5f9 !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.08), 0 4px 6px -4px rgba(37, 99, 235, 0.08) !important;
+  opacity: 1 !important;
+}
+
+/* Ensure selected dimension button text reads perfectly in light mode */
+:root.light .features-dim-btn[data-active="true"] .text-white {
+  color: #1e3a8a !important; /* deep blue */
+}
+
+:root.light .features-dim-btn[data-active="false"] .text-white {
+  color: #475569 !important; /* dark slate */
+}
+
+/* Ensure the title text is dark when hovered or active */
+:root.light .features-dim-btn .text-white {
+  color: #475569 !important;
+}
+
+:root.light .features-dim-btn:hover {
+  border-color: #cbd5e1 !important;
+  opacity: 1 !important;
+}
+
+:root.light .features-dim-btn:hover .text-white {
+  color: #0f172a !important;
+}
+
+/* Light Mode overrides for the new Marquee / Carousel Ticker */
+:root.light .marquee-container {
+  background-image: linear-gradient(to bottom right, #ffffff, #f8fafc, #f1f5f9) !important;
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+}
+
+:root.light .marquee-sector-card {
+  background-image: linear-gradient(to right, #ffffff, #f8fafc) !important;
+  background-color: #ffffff !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+  color: #1e40af !important; /* blue-800 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+:root.light .marquee-sector-card:hover {
+  border-color: #2563eb !important;
+  background-image: linear-gradient(to right, #eff6ff, #dbeafe) !important;
+  color: #1d4ed8 !important;
+}
+
+:root.light .marquee-tech-card {
+  background-image: linear-gradient(to right, #ffffff, #f8fafc) !important;
+  background-color: #ffffff !important;
+  border-color: rgba(6, 182, 212, 0.2) !important;
+  color: #0f766e !important; /* teal-700 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+:root.light .marquee-tech-card:hover {
+  border-color: #0891b2 !important;
+  background-image: linear-gradient(to right, #ecfeff, #cffafe) !important;
+  color: #0e7490 !important;
+}
+
+
